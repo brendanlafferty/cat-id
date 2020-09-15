@@ -10,9 +10,20 @@ def plot_class_distribution(image_directory: str = './data/images/',
                             filename: str = 'full_data_set',
                             output_directory: str = './data/',
                             title: str = None,
-                            labels=False,
-                            rotate=False,
-                            semilog=False):
+                            labels: bool = False,
+                            rotate: bool = False,
+                            semilog: bool = False):
+    """
+    Creates a bar chart of the number of files in the directory
+    :param image_directory: directory with sub directories representing the classes
+    :param filename: root of the file name to save the plot to
+    :param output_directory: where to save the plot
+    :param title: Title for the plot
+    :param labels: whether to add labels or not
+    :param rotate:  whether to rotate the labels
+    :param semilog: whether to change the y axis to log scale
+    :return:
+    """
     class_dist = {' '.join(cat_type.split()[:2]): len(os.listdir(image_directory + cat_type))
                   for cat_type in os.listdir(image_directory)}
     data_count = pd.Series(class_dist)
@@ -51,9 +62,17 @@ def autolabel(rects, rotation=0):
                     ha='center', va='bottom', color=(1,1,1),
                     rotation=rotation)
 
+
 def create_word_cloud(image_directory: str = './data/images/',
                             filename: str = 'full_data_set',
                             output_directory: str = './data/'):
+    """
+    Creates a wordcloud of the class distribution
+    :param image_directory: directory with sub directories representing the classes
+    :param filename: root of the file name to save the plot to
+    :param output_directory: where to save the plot
+    :return:
+    """
 
     class_dist = {cat_type: len(os.listdir(image_directory + cat_type))
                   for cat_type in os.listdir(image_directory)}
