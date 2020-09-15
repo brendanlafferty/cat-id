@@ -1,0 +1,8 @@
+tensorflow
+flask
+werkzeug
+PIL
+matplotlib
+pandas
+wordcloud
+numpy
