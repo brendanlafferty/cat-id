@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coat Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <img src={{image}}>
+    <div>{{prediction}}</div>
+    <a href="http://localhost:5000/upload">Upload Another Cat for Identification</a>
+    <table>
+        {% for row in pred_data %}
+            <tr>
+                <th>{{ row[0] }}</th>
+                <td>{{ (row[1]* 100).round(1) }}</td>
+                <td>%</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

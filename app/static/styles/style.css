@@ -1,0 +1,9 @@
+body {
+    font-family: Helvetica, Geneva, sans-serif;
+}
+table {
+    padding: 10;
+}
+td {
+    text-align: right;
+}
